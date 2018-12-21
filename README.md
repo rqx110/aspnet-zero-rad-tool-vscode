@@ -15,7 +15,7 @@ It is similar with the official visual studio extension: [ASP.NET Zero Power Too
 3. run the command `Run ASP.NET Zero Rad Tool` from explore context menu
 
 
-## Avilable Snippets
+## Available Snippets
 
 * zero-entity
 * zero-property
