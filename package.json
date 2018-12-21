@@ -1,0 +1,61 @@
+{
+    "name": "aspnet-zero-rad-tool-vscode",
+    "displayName": "ASP.NET Zero Rad Tools for vscode",
+    "description": "ASP.NET Zero Rapid Application Development tooling.",
+    "keywords": ["abp", "asp.net zero", "abp zero"],
+    "version": "0.1.0",
+    "publisher": "rqx110",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "icon": "images/icon.png",
+    "license": "MIT",
+    "bugs": { "url": "https://github.com/rqx110/aspnet-zero-rad-tool-vscode/issues" },
+    "homepage": "https://github.com/rqx110/aspnet-zero-rad-tool-vscode/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rqx110/aspnet-zero-rad-tool-vscode.git"
+    },
+    "activationEvents": [
+        "workspaceContains:**/config.json",
+        "workspaceContains:**/AspNetZeroRadTool.dll"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.runRadTool",
+            "title": "Run ASP.NET Zero Rad Tool"
+        }],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "resourceExtname == .json && resourceFilename != config.json",
+                    "command": "extension.runRadTool"
+                }
+            ]
+        },
+        "snippets": [
+            {
+                "language": "json",
+                "path": "./snippets/snippet.json"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "yarn run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "yarn run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^3.1.4",
+        "vscode": "^1.1.25",
+        "tslint": "^5.8.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "abp-zero-power-tool": {
+        "prefix": "zero-entity",
+        "body": [
+            "{",
+                "\t\"MenuPosition\": \"${1|main,admin|}\",",
+                "\t\"RelativeNamespace\": \"${2:EntityName}s\",",
+                "\t\"EntityName\": \"${2:EntityName}\",",
+                "\t\"EntityNamePlural\": \"${2:EntityName}s\",",
+                "\t\"TableName\": \"${2:EntityName}s\",",
+                "\t\"PrimaryKeyType\": \"${3|int,long,Guid|}\",",
+                "\t\"BaseClass\": \"${4|Entity,AuditedEntity,CreationAuditedEntity,FullAuditedEntity|}\",",
+                "\t\"AutoMigration\": ${5|false,true|},",
+                "\t\"UpdateDatabase\": ${6|false,true|},",
+                "\t\"CreateUserInterface\": ${7|true,false|},",
+                "\t\"CreateViewOnly\": ${8|true,false|},",
+                "\t\"PagePermission\": {",
+                "\t\t\"Host\": ${9|true,false|},",
+                "\t\t\"Tenant\": ${10|true,false|}",
+                "\t},",
+                "\t\"Properties\": [",
+                "\t\t$0",
+                "\t],",
+                "\t\"NavigationProperties\": [",
+                "\t\t",
+                "\t],",
+                "\t\"EnumDefinitions\": [",
+                "\t\t",
+                "\t]",
+            "}"
+        ],
+        "description": ""
+    },
+    "Properties":{
+        "prefix":"zero-property",
+        "body":[
+            "{",
+                "\t\"Name\": \"${1:PropertyName}\",",
+                "\t\"Type\": \"${2|string,bool,byte,short,DateTime,decimal,double,Guid,int,long,EnumDefinition|}\",",
+                "\t\"MaxLength\":${3:255},",
+                "\t\"MinLength\":${4:1},",
+                "\t\"Range\": {",
+                "\t\t\"IsRangeSet\": ${5|false,true|},",
+                "\t\t\"MinimumValue\": ${6:0},",
+                "\t\t\"MaximumValue\": ${7:0}",
+                "\t},",
+                "\t\"Required\": ${8|true,false|},",
+                "\t\"Nullable\": ${9|true,false|},",
+                "\t\"Regex\": \"\",",
+                "\t\"UserInterface\": {",
+                "\t\t\"List\": ${10|true,false|},",
+                "\t\t\"AdvancedFilter\": ${11|true,false|},",
+                "\t\t\"CreateOrUpdate\": ${12|true,false|}",
+                "\t}",
+            "},",                
+            "$0"
+        ],
+        "description": ""
+    },
+    "NavigationProperties":{
+        "prefix":"zero-nav-property",
+        "body":[
+            "{",
+                "\t\"Namespace\": \"${1:NavigationPropertyNamespace}\",",
+                "\t\"ForeignEntityName\": \"${2:ForeignEntityName}\",",
+                "\t\"IdType\": \"${3|int,long,Guid|}\",",
+                "\t\"IsNullable\": ${4|true,false|},",
+                "\t\"PropertyName\": \"${5:PropertyName}\",",
+                "\t\"DisplayPropertyName\": \"${6:DisplayPropertyName}\",",
+                "\t\"DuplicationNumber\": 0,",
+                "\t\"RelationType\": \"single\"",
+            "},",
+            "$0"
+        ],
+        "description": ""
+    },
+    "EnumDefinitions":{
+        "prefix":"zero-enum-def",
+        "body":[
+            "{",
+                "\t\"Namespace\": \"${1:EnumNamespace}\",",
+                "\t\"Name\": \"${2:EnumName}\",",
+                "\t\"EnumProperties\": [",
+                "\t\t{",
+                "\t\t\t\"Name\": \"${3:EnumPropertyName}\",",
+                "\t\t\t\"Value\": 1",
+                "\t\t}",
+                "\t]",
+            "},"
+        ],
+        "description": ""
+    }
+}
