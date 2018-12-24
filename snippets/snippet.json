@@ -1,5 +1,5 @@
 {
-    "abp-zero-power-tool": {
+    "abp-zero-rad-tool": {
         "prefix": "zero-entity",
         "body": [
             "{",
