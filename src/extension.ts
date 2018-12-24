@@ -4,24 +4,24 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import { spawn } from 'child_process';
+import * as AdmZip from 'adm-zip';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "aspnet-zero-power-tool-vscode" is now active!');
-
     let commandOutput = vscode.window.createOutputChannel('Shell');
     context.subscriptions.push(commandOutput);
 
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.runRadTool', (uri) => {
+    let disposable = vscode.commands.registerCommand('extension.runRadTool', (uri: vscode.Uri) => {
         commandOutput.show();
         commandOutput.appendLine('-> code generation is begining...');
+
+        // unzip AspNetZeroRadTool.zip to folder
+        let zip = new AdmZip(path.join(__dirname, '..','resources/AspNetZeroRadTool.zip'));
+        zip.extractAllTo(/*target path*/path.join(path.dirname(uri.fsPath), '..'), /*overwrite*/true);
+
+        // run rad tool
         let process = spawn('dotnet.exe', ['AspNetZeroRadTool.dll', path.basename(uri.fsPath)], {cwd: path.dirname(uri.fsPath), shell: true});
         function printOutput(data:any) { 
             commandOutput.append(data.toString()); 
