@@ -7,7 +7,7 @@
         "asp.net zero",
         "abp zero"
     ],
-    "version": "0.2.0",
+    "version": "0.3.0",
     "publisher": "rqx110",
     "engines": {
         "vscode": "^1.30.0"
