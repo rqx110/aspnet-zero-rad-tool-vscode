@@ -1,13 +1,13 @@
 {
     "name": "aspnet-zero-rad-tool-vscode",
-    "displayName": "ASP.NET Zero Rad Tools for vscode",
+    "displayName": "ASP.NET Zero Power Tools for vscode",
     "description": "ASP.NET Zero Rapid Application Development tooling.",
     "keywords": [
         "abp",
         "asp.net zero",
         "abp zero"
     ],
-    "version": "0.4.0",
+    "version": "0.5.0",
     "publisher": "rqx110",
     "engines": {
         "vscode": "^1.30.0"
@@ -53,6 +53,7 @@
         ]
     },
     "scripts": {
+        "build:vsix": "vsce package",
         "vscode:prepublish": "yarn run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
@@ -65,6 +66,7 @@
         "@types/node": "^8.10.25",
         "tslint": "^5.8.0",
         "typescript": "^3.1.4",
+        "vsce": "^1.66.0",
         "vscode": "^1.1.25"
     },
     "dependencies": {
