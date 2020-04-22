@@ -22,7 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
         zip.extractAllTo(/*target path*/path.join(path.dirname(uri.fsPath), '..'), /*overwrite*/true);
 
         // run rad tool
-        let process = spawn('dotnet.exe', ['AspNetZeroRadTool.dll', path.basename(uri.fsPath)], {cwd: path.dirname(uri.fsPath), shell: true});
+        let process = spawn('dotnet', ['AspNetZeroRadTool.dll', path.basename(uri.fsPath)], {cwd: path.dirname(uri.fsPath), shell: true});
         function printOutput(data:any) { 
             commandOutput.append(data.toString()); 
             process.stdin.write('\x0D');
