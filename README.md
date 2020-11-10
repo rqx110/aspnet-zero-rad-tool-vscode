@@ -16,6 +16,7 @@ It is similar with the official visual studio extension: [ASP.NET Zero Power Too
 4. using code snippets to edit YourEntity.json file
 5. run the command `Run ASP.NET Zero Rad Tool` from explore context menu
 
+Note: Asp.Net Zero rad tool requires .NET Core 2.2 Runtime.
 
 ## Available Snippets
 
