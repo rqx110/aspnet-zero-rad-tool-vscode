@@ -25,12 +25,10 @@
                 "\t\"Properties\": [",
                 "\t\t$0",
                 "\t],",
-                "\t\"NavigationProperties\": [",
-                "\t\t",
-                "\t],",
-                "\t\"EnumDefinitions\": [",
-                "\t\t",
-                "\t]",
+                "\t\"NavigationProperties\": [],",
+                "\t\"NavigationPropertyOneToManyTables\": [],",
+                "\t\"EnumDefinitions\": [],",
+                "\t\"DbContext\": null",
             "}"
         ],
         "description": ""
@@ -72,9 +70,22 @@
                 "\t\"PropertyName\": \"${5:PropertyName}\",",
                 "\t\"DisplayPropertyName\": \"${6:DisplayPropertyName}\",",
                 "\t\"DuplicationNumber\": 0,",
-                "\t\"RelationType\": \"single\"",
-            "},",
-            "$0"
+                "\t\"RelationType\": \"single\",",
+                "\t\"ViewType\": \"${7|LookupTable,Dropdown|}\""                
+            "}"
+        ],
+        "description": ""
+    },
+    "NavigationPropertyOneToManyTables":{
+		"prefix":"zero-nav-property-one-to-many",
+        "body":[
+			"{",
+                "\t\"EntityJson\": \"${1:ChildEntityJson}.json\",",
+                "\t\"ForeignPropertyName\": \"${2:ForeignPropertyName}\",",
+                "\t\"IsNullable\": ${3|true,false|},",
+                "\t\"DisplayPropertyName\": \"${4:DisplayPropertyName}\",",
+                "\t\"ViewType\": \"${5|LookupTable,Dropdown|}\""                
+            "}"
         ],
         "description": ""
     },
