@@ -1,4 +1,5 @@
 # Asp.Net Zero rad tool for vscode 
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/rqx110.aspnet-zero-rad-tool-vscode)
 
 ## Description
 
